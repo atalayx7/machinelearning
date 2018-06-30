@@ -1,0 +1,20 @@
+import numpy as np
+
+'''
+Calories from Carbs, Proteins, Fats in 100g of different foods
+        
+        Apples  Beef    Eggs    Potatoes    
+Carbs   56.0    0.0     4.4     68.0
+Protein 1.2     104.0   52.0    8.0
+Fat     1.8     135.0   99.0    0.9
+
+It is an example of calculating percentages of the colomns for Carb, Protein and Fat without using for-loop.
+'''
+A = np.array([[56.0, 0.0, 4.4, 68.0],
+              [1.2, 104.0, 52.0, 8.0],
+              [1.8, 135.0, 99.0, 0.9]])
+
+cal = A.sum(axis=0)  # computes the total number of calories in the apple, beef, eggs, potatoes respectively
+
+percentage = 100 * A / cal.reshape(1, 4)  # computes the matrix of percentages
+print(percentage)
